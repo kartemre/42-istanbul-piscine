@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 14:18:00 by ekart             #+#    #+#             */
-/*   Updated: 2023/09/06 14:20:36 by ekart            ###   ########.tr       */
+/*   Created: 2025/04/12 13:18:44 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/12 13:19:27 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,3 +16,11 @@ void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
+/*
+int main()
+{
+	char test = 'z';
+	ft_putchar(test);
+	ft_putchar('e');
+}
+*/

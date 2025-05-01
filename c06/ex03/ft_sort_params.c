@@ -1,63 +1,66 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/24 23:10:26 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/25 21:17:54 by ekart            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
-
-int ft_cmp(char *s1, char *s2)
-{
-	int i;
-	
-	i = 0;
-	while (s1[i] || s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
-}
-
-void ft_swap(char **s1, char **s2)
-{
-	char *tmp;
-	tmp = *s1;
-	*s1 = *s2;
-	*s2 = tmp;
-}
-
-int	main(int argc, char *argv[])
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
-	int	j;
-	int	c;
 
-	i = 1;
-	while (i < argc - 1)
-	{
-		j = i + 1;
-		while (j < argc)
-		{
-			if (ft_cmp(argv[i], argv[j]) > 0)
-			{
-				ft_swap(&argv[i], &argv[j]);
-			}
-			j++;
-		}
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
 		i++;
-	}
-	j = 1;
-	c = 0;
-	while (j < argc)
+	return (s1[i] - s2[i]);
+}
+
+void	print_param(int argc, char **argv)
+{
+	int	s;
+	int	i;
+
+	s = 1;
+	i = 0;
+	while (s < argc)
 	{
-		while (argv[j][c])
+		i = 0;
+		while (argv[s][i] != '\0')
 		{
-			ft_putchar(argv[j][c]);
-			c++;
+			write(1, &argv[s][i], 1);
+			i++;
 		}
-		ft_putchar('\n');
-		j++;
+		argv[s][i] = '\0';
+		write(1, "\n", 1);
+		s++;
 	}
+}
+
+int	main(int argc, char **argv)
+{
+	char	*temp;
+	int		s;
+
+	s = 1;
+	while (s < argc - 1)
+	{
+		if (ft_strcmp(argv[s], argv[s + 1]) > 0)
+		{
+			temp = argv[s];
+			argv[s] = argv[s + 1];
+			argv[s + 1] = temp;
+			s = 1;
+		}
+		else
+			s++;
+	}
+	print_param(argc, argv);
 	return (0);
 }

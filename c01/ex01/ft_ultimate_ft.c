@@ -5,42 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 15:56:32 by ekart             #+#    #+#             */
-/*   Updated: 2023/09/04 16:49:53 by ekart            ###   ########.tr       */
+/*   Created: 2025/04/14 20:18:49 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/15 21:14:44 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-#include <stdio.h>
 
 void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;
 }
-
+/*
 int main()
 {
-	int x;
-	int *a;
-	int **b;
-	int ***c;
-	int ****d;
-	int *****e;
-	int ******f;
-	int *******g;
-	int ********h;
-	int *********j;
+	int a;
+	a = 22;
+	printf("%d", a);
+	int *a1;
+	int **a2;
+	int ***a3;
+	int ****a4;
+	int *****a5;
+	int ******a6;
+	int *******a7;
+	int ********a8;
 	
-	a = &x;
-	b = &a;
-	c = &b;
-	d = &c;
-	e = &d;
-	f = &e;
-	g = &f;
-	h = &g;
-	j = &h;
-
-	ft_ultimate_ft(j);
-	printf("%d", ***c);
+	a1 = &a;
+	a2 = &a1;
+	a3 = &a2;
+	a4 = &a3;
+	a5 = &a4;
+	a6 = &a5;
+	a7 = &a6;
+	a8 = &a7;
+	
+	ft_ultimate_ft(&a8);
+	printf("%d", a);
 }
+*/

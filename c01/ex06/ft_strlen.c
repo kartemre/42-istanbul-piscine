@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekart <ekart@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 18:32:12 by ekart             #+#    #+#             */
-/*   Updated: 2025/04/15 21:35:18 by ekart            ###   ########.fr       */
+/*   Created: 2025/04/15 18:33:10 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/16 12:36:12 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+int	ft_strlen(char *str)
 {
-	int	temp;
+	int	i;
 
-	temp = *a;
-	*a = temp / *b;
-	*b = temp % *b;
+	i = 0;
+	while (*str)
+	{
+		i++;
+		str++;
+	}
+	return (i);
 }
 /*
 int main()
 {
-    int x = 29, y = 6;
-    printf("x = %d, y = %d\n",x , y);
-    ft_ultimate_div_mod(&x, &y);
-    printf("x = %d, y = %d",x , y);
+    char *test = "emre/n";
+    char tes[10] = "kartemre";
+    char te[] = "burda 12 var";
+    printf("1. %d\n", ft_strlen(test));
+    printf("2. %d\n", ft_strlen(tes));
+    printf("3. %d\n", ft_strlen(te));
 }
 */

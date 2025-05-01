@@ -1,18 +1,29 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/19 13:28:32 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/20 03:56:36 by ekart            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-	int i;
+	int	i;
+	int	j;
+
 	i = 0;
-	int x = 0;
-	while (dest[i] != '\0')
+	j = 0;
+	while (dest[i])
 		i++;
-	while (src[x] != '\0')
+	while (src[j])
 	{
-		dest[i] = src[x];
-		x++;
-		i++;
+		dest[i + j] = src[j];
+		j++;
 	}
-	dest[i] = '\0';
+	dest[i + j] = '\0';
 	return (dest);
 }

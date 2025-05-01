@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: ekart <ekart@student.42istanbul.com.t      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 13:20:21 by ekart             #+#    #+#             */
-/*   Updated: 2025/04/12 13:36:18 by ekart            ###   ########.fr       */
+/*   Created: 2025/04/23 23:58:52 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/24 22:12:52 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_putnbr(int nb)
 {
-	char	a;
+	unsigned int	n;
+	char			c;
 
-	a = 'a';
-	while (a <= 'z')
+	n = nb;
+	if (nb < 0)
 	{
-		write(1, &a, 1);
-		a++;
+		write(1, "-", 1);
+		n = -nb;
+	}
+	if (n < 10)
+	{
+		c = '0' + n;
+		write(1, &c, 1);
+	}
+	else
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
 	}
 }

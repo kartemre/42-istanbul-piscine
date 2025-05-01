@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 09:39:37 by ekart             #+#    #+#             */
-/*   Updated: 2023/09/01 10:01:41 by ekart            ###   ########.tr       */
+/*   Created: 2025/04/12 13:20:49 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/12 13:20:53 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,18 @@
 
 void	ft_print_reverse_alphabet(void)
 {
-	char	i;
+	char	letter;
 
-	i = 'z';
-	while (i >= 'a')
+	letter = 'z';
+	while (letter >= 'a')
 	{
-		write(1, &i, 1);
-		i--;
+		write(1, &letter, 1);
+		letter--;
 	}
 }
+/*
+int main()
+{
+	ft_print_reverse_alphabet();
+}
+*/

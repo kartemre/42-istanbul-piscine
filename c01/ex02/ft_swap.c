@@ -5,27 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 16:51:30 by ekart             #+#    #+#             */
-/*   Updated: 2023/09/04 17:11:19 by ekart            ###   ########.tr       */
+/*   Created: 2025/04/14 21:31:02 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/15 21:17:49 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 void	ft_swap(int *a, int *b)
 {
-	int tmp;
-	tmp = *a;
+	int	temp;
+
+	temp = *a;
 	*a = *b;
-	*b = tmp;
+	*b = temp;
 }
-
-int	main(void)
+/*
+int main()
 {
-	int x = 10;
-	int y = 20;
-
+	int x = 18, y = 3;
+	printf("x = %d, y = %d\n", x, y);
 	ft_swap(&x, &y);
-	printf("%d, %d", x, y);
-	return 0;
+	printf("x = %d, y = %d\n", x, y);
 }
+*/

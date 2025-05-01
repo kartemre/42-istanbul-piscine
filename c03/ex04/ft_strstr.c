@@ -1,37 +1,31 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/19 13:30:02 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/20 03:57:58 by ekart            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strstr(char *str, char *to_find)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
-	int	tmp;
-	int	x;
+	int	j;
 
+	i = 0;
 	if (*to_find == '\0')
 		return (str);
-	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		x = 0;
-		if (str[i] == to_find[x])
-		{
-			tmp = 0;
-			while (to_find[x] != '\0')
-			{
-				if (str[i + x] != to_find[x])
-					tmp = 1;
-				x++;
-			}
-			if (tmp == 0)
-				return (str + i);
-		}
+		j = 0;
+		while (to_find[j] && str[i + j] == to_find[j])
+			j++;
+		if (to_find[j] == '\0')
+			return (&str[i]);
 		i++;
 	}
 	return (0);
-}
-
-int main ()
-{
-	char ar[] = "Emrenin pili bitiyore";
-	char f[] = "reni";
-	printf("%s",ft_strstr(ar, f));
 }

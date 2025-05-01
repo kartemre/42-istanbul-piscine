@@ -3,18 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekart <ekart@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 18:33:30 by ekart             #+#    #+#             */
-/*   Updated: 2023/09/06 14:30:14 by ekart            ###   ########.tr       */
+/*   Created: 2025/04/12 13:22:46 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/12 13:22:48 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_write_one(int a)
 {
-	write(1, &c, 1);
+	char	c;
+
+	if (a <= 9)
+	{
+		c = '0' + a;
+		write(1, "0", 1);
+		write(1, &c, 1);
+	}
+	else
+	{
+		c = '0' + (a / 10);
+		write(1, &c, 1);
+		c = '0' + (a % 10);
+		write(1, &c, 1);
+	}
 }
 
 void	ft_print_comb2(void)
@@ -23,21 +37,24 @@ void	ft_print_comb2(void)
 	int	b;
 
 	a = 0;
-	while (a <= 98)
+	while (a <= 99)
 	{
 		b = a + 1;
 		while (b <= 99)
 		{
-			ft_putchar(a / 10 + 48);
-			ft_putchar(a % 10 + 48);
-			ft_putchar(' ');
-			ft_putchar(b / 10 + 48);
-			ft_putchar(b % 10 + 48);
-			if (a != 98)
-				ft_putchar(',');
-			ft_putchar(' ');
+			ft_write_one(a);
+			write(1, " ", 1);
+			ft_write_one(b);
+			if (a < 98 || b < 99)
+				write(1, ", ", 2);
 			b++;
 		}
 		a++;
 	}
 }
+/*
+int main()
+{
+	ft_print_comb2();
+}
+*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: ekart <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 10:03:00 by ekart             #+#    #+#             */
-/*   Updated: 2023/09/01 10:39:53 by ekart            ###   ########.tr       */
+/*   Created: 2025/04/11 19:58:59 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/11 20:10:02 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,18 @@
 
 void	ft_print_numbers(void)
 {
-	char	a;
+	char	num;
 
-	a = '0';
-	while (a <= '9')
+	num = '0';
+	while (num <= '9')
 	{
-		write(1, &a, 1);
-		a++;
+		write(1, &num, 1);
+		num++;
 	}
 }
+/*
+int main()
+{
+	ft_print_numbers();
+}
+*/

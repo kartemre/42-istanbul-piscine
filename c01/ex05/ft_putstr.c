@@ -3,31 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: ekart <ekart@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 22:21:41 by ekart             #+#    #+#             */
-/*   Updated: 2023/09/04 22:29:19 by ekart            ###   ########.tr       */
+/*   Created: 2025/04/15 18:32:31 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/15 21:52:51 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-//	void	ft_putstr()
-//{
-	
-//}
-
-void	ft_ft(int *nbr)
+void	ft_putstr(char *str)
 {
-	*nbr = 42;
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
 }
-
+/*
 int main()
-{	
-	int x;
-	ft_ft(&x);
-	printf("%d", x);
-	return 0;
+{
+    char *test = "Merhaba 42!\n";
+    char tes[6] = "emre\n";
+    char te[] = "aksbr\n";
+
+    ft_putstr(test);
+    ft_putstr(tes);
+    ft_putstr(te);
 }
-
-
+*/

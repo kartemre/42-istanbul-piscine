@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/24 23:08:30 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/25 01:11:04 by ekart            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
-int main(int ac, char **av)
+
+int	main(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if (ac > 0)
+	if (argc > 0)
 	{
-		while (av[0][i])
+		while (argv[0][i])
 		{
-			write(1, &av[0][i], 1);
+			write(1, &argv[0][i], 1);
 			i++;
 		}
-	ft_putchar('\n');
 	}
-	return (0);
+	write(1, "\n", 1);
 }

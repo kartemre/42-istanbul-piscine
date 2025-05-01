@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: ekart <ekart@student.42istanbul.com.t      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 13:20:21 by ekart             #+#    #+#             */
-/*   Updated: 2025/04/12 13:36:18 by ekart            ###   ########.fr       */
+/*   Created: 2025/04/23 23:57:24 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/24 22:06:26 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+int	ft_strlen(char *str)
 {
-	char	a;
+	int	i;
 
-	a = 'a';
-	while (a <= 'z')
-	{
-		write(1, &a, 1);
-		a++;
-	}
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

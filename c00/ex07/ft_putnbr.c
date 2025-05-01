@@ -3,45 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekart <ekart@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 18:33:30 by ekart             #+#    #+#             */
-/*   Updated: 2023/09/06 14:33:27 by ekart            ###   ########.tr       */
+/*   Created: 2025/04/12 13:23:08 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/12 13:23:13 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-//integer aralığı -2147483648 ile 2147483647 arasında
-
 void	ft_putnbr(int nb)
 {
+	unsigned int	a;
+	char			c;
+
 	if (nb < 0)
 	{
-		if (nb == -2147483648)
-		{
-			ft_putchar('-');
-			ft_putchar('2');
-			nb = 147483648;
-		}
-		else
-		{
-			ft_putchar('-');
-			nb = -nb;
-		}
+		write(1, "-", 1);
+		a = nb * -1;
 	}
-	if (nb >= 0)
-	{
-		if (nb > 9)
-		{
-			ft_putnbr(nb / 10);
-			ft_putnbr(nb % 10);
-		}
-		else
-			ft_putchar(nb + 48);
-	}
+	else
+		a = nb;
+	if (a >= 10)
+		ft_putnbr(a / 10);
+	c = '0' + (a % 10);
+	write(1, &c, 1);
 }
+/*
+int main()
+{
+	ft_putnbr(-2147483648);
+	write(1, "\n", 1);
+	ft_putnbr(34);
+	write(1, "\n", 1);
+	ft_putnbr(-42);
+	write(1, "\n", 1);
+	ft_putnbr(2147483647);
+}
+*/

@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekart <ekart@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: ekart <ekart@student.42istanbul.com.t      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 13:20:21 by ekart             #+#    #+#             */
-/*   Updated: 2025/04/12 13:36:18 by ekart            ###   ########.fr       */
+/*   Created: 2025/04/23 23:58:19 by ekart             #+#    #+#             */
+/*   Updated: 2025/04/24 22:09:03 by ekart            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_putstr(char	*str)
 {
-	char	a;
+	int	i;
 
-	a = 'a';
-	while (a <= 'z')
-	{
-		write(1, &a, 1);
-		a++;
-	}
+	i = 0;
+	while (str[i])
+		write(1, &str[i++], 1);
 }
